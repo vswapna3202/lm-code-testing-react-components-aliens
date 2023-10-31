@@ -10,7 +10,7 @@ import FormDataDisplay from './FormDataDisplay';
 const W12MForm = () => {
 	const [speciesName, setSpeciesName] = useState('humans');	
 	const [planetName, setPlanetName] = useState('earth');
-	const [numberOfBeings, setNumberOfBeings] = useState('7.9 billion');
+	const [numberOfBeings, setNumberOfBeings] = useState('7900000000');
 	const[question, setQuestion] = useState('Not 4');
 	const[reasonForSparing, setReasonForSparing] = useState('Correctly filled Form!')
 	const [isSubmitted, setIsSubmitted] = useState(false);

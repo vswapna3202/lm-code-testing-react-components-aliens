@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 export interface NumberOfBeingsProps {
     numberOfBeings : string;
@@ -7,6 +7,23 @@ export interface NumberOfBeingsProps {
 
 const NumberOfBeings : React.FC<NumberOfBeingsProps> = 
     ({numberOfBeings, onChangeNumberOfBeings}) => {
+    
+    const [numberOfBeingsError, setNumberOfBeingsError] = useState('');
+    
+    function validateNumberOfBeings(name: string){
+      const regex = /^(?:[1-9]\d{0,8}|1000000000)$/;      
+      return regex.test(name);
+    }
+
+    function handleNumberOfBeingsChange(event: { target: { value: string; }; }){
+      const newName = event.target.value;
+      onChangeNumberOfBeings(newName);
+      if (!validateNumberOfBeings(newName)){
+        setNumberOfBeingsError('Number of beings should be a number between 1 and 1000000000');
+      }else{
+        setNumberOfBeingsError('');
+      }
+    } 
     return (
       <>
         <label htmlFor='numberOfBeings'>Number of Beings:</label>
@@ -14,8 +31,9 @@ const NumberOfBeings : React.FC<NumberOfBeingsProps> =
                 id='numberOfBeings'
                 type='text'
                 value={numberOfBeings}
-                onChange={(e) => onChangeNumberOfBeings(e.target.value)}
-        />        
+                onChange={handleNumberOfBeingsChange}
+        />    
+        {numberOfBeingsError && <div className='error-message'>{numberOfBeingsError}</div>}    
       </> )        
 };
 
