@@ -10,8 +10,7 @@ test('renders Question Component', () => {
     const questionLabel = screen.getByLabelText('What is 2+2:');
     expect(questionLabel).toBeInTheDocument();
 
-    const questionDropDown = screen.getByLabelText('What is 2+2:');
-    //const questionDropDown = screen.getByRole('combobox', { name: 'What is 2+2:' });
+    const questionDropDown = screen.getByLabelText('What is 2+2:');    
     expect(questionDropDown).toBeInTheDocument();
 
     fireEvent.change(questionDropDown, { target: { value: '4' }}); 

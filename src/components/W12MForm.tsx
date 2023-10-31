@@ -23,7 +23,7 @@ const W12MForm = () => {
 			<W12MHeader />
 			{/* REST OF FORM GOES HERE */}
 			<form>
-				<div>
+				<div className='form-data-display'>
 					<SpeciesName speciesName={speciesName} 
 					onChangeSpeciesName={(value) => setSpeciesName(value)} />
 					<br/>
@@ -42,18 +42,19 @@ const W12MForm = () => {
 					<br/>
 				</div>
 			
-				<button type='submit' onClick={handleSubmit}>Submit Form</button>
+				<button type='submit' data-testid='submit-button' onClick={handleSubmit}>Submit Form</button>
 			</form>
-
+			<div data-testid='form-data-display' className='form-data-display'>
 			{isSubmitted && (
 				<FormDataDisplay
 					speciesName={speciesName}
 					planetName={planetName}
 					numberOfBeings={numberOfBeings}
-					question={question}
-					reasonForSparing={reasonForSparing}
+					question={question} 
+					reasonForSparing={reasonForSparing}					
 				/>
-			)}						
+			)}		
+			</div>				
 		</section>
 	);
 };	
