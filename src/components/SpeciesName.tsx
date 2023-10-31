@@ -8,7 +8,7 @@ export interface SpeciesNameProps {
 const SpeciesName : React.FC<SpeciesNameProps> = ({ speciesName, onChangeSpeciesName }) => {
     return (
     <>
-        <label htmlFor='speciesName'>Species Name</label>
+        <label htmlFor='speciesName'>Species Name: </label>
         <input key='speciesName' 
                id='speciesName' 
                type='text' 
