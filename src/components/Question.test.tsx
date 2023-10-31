@@ -15,8 +15,12 @@ test('renders Question Component', () => {
 
     fireEvent.change(questionDropDown, { target: { value: '4' }}); 
     expect(handleChange).toHaveBeenCalledWith('4');
+    handleChange.mockReturnValue([]);
+
     fireEvent.change(questionDropDown, { target: { value: 'Not 4' }}); 
     expect(handleChange).toHaveBeenCalledWith('Not 4');
+    const errorMessage = 'Error: Please select 4';
+    expect(screen.getByText(errorMessage)).toBeInTheDocument();
 });
     
     
