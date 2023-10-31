@@ -30,7 +30,7 @@ const ReasonForSparing : React.FC<ReasonForSparingProps> =
                       value={reasonForSparing}
                       onChange={handleReasonForSparingChange}
             />
-            {reasonForSparingError && <div className='error-message'>{reasonForSparingError}</div>}
+            {reasonForSparingError && (<div className='error-message' style={{color: 'red'}}>{reasonForSparingError}</div>)}
         </>
     );
 };

@@ -12,7 +12,7 @@ const W12MForm = () => {
 	const [planetName, setPlanetName] = useState('earth');
 	const [numberOfBeings, setNumberOfBeings] = useState('7900000000');
 	const[question, setQuestion] = useState('4');
-	const[reasonForSparing, setReasonForSparing] = useState('Correctly filled Form!')
+	const[reasonForSparing, setReasonForSparing] = useState('Correctly filled Form')
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const handleSubmit = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
