@@ -33,7 +33,7 @@ const NumberOfBeings : React.FC<NumberOfBeingsProps> =
                 value={numberOfBeings}
                 onChange={handleNumberOfBeingsChange}
         />    
-        {numberOfBeingsError && <div className='error-message'>{numberOfBeingsError}</div>}    
+        {numberOfBeingsError && (<div className='error-message' style={{color:'red'}}>{numberOfBeingsError}</div>)}    
       </> )        
 };
 
