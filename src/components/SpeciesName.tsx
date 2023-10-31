@@ -13,7 +13,7 @@ const SpeciesName : React.FC<SpeciesNameProps> = ({ speciesName, onChangeSpecies
         return regex.test(name);
       }
     
-      function handleSpeciesNameChange(event: { target: { value: any; }; }){
+    function handleSpeciesNameChange(event: { target: { value: any; }; }){
         const newName = event.target.value;
         onChangeSpeciesName(newName);
         if (!validateSpeciesName(newName)) {
