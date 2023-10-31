@@ -11,7 +11,14 @@ test('renders SpeciesName Component', () => {
 
     const speciesNameElement = screen.getByLabelText('Species Name:');
     expect(speciesNameElement.getAttribute('value')).toBe('humans');
+    mockOnChangeSpeciesName.mockReturnValue(['']);
     fireEvent.change(speciesNameElement,{target:{value:'aliens'}});
     expect(mockOnChangeSpeciesName).toHaveBeenCalledWith('aliens');   
+    mockOnChangeSpeciesName.mockReturnValue(['']);
+    fireEvent.change(speciesNameElement,{target:{value:'123'}});
+    expect(mockOnChangeSpeciesName).toHaveBeenCalledWith('123');
+    const errorMessage = 'Species Name must be between 3 and 23 characters, and contain only letters.';
+    expect(screen.getByText(errorMessage)).toBeInTheDocument();
+    
       
 })
