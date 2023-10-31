@@ -8,7 +8,7 @@ import ReasonForSparing from './ReasonForSparing';
 import FormDataDisplay from './FormDataDisplay';
 
 const W12MForm = () => {
-	const [speciesName, setSpeciesName] = useState('humans');
+	const [speciesName, setSpeciesName] = useState('humans');	
 	const [planetName, setPlanetName] = useState('earth');
 	const [numberOfBeings, setNumberOfBeings] = useState('7.9 billion');
 	const[question, setQuestion] = useState('Not 4');
