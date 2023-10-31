@@ -32,7 +32,7 @@ const PlanetName : React.FC<PlanetNameProps> = ({planetName, onChangePlanetName}
                  value={planetName}
                  onChange={handlePlanetNameChange}
           />       
-          {planetNameError && <div className='error-message'>{planetNameError}</div>}
+          {planetNameError && (<div className='error-message' style={{color:'red'}}>{planetNameError}</div>)}
         </> )
 };
 
