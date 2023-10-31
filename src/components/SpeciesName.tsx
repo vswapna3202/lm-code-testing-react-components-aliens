@@ -32,7 +32,7 @@ const SpeciesName : React.FC<SpeciesNameProps> = ({ speciesName, onChangeSpecies
                value={speciesName} 
                onChange={handleSpeciesNameChange}                
         />
-        {speciesNameError && <div className="error-message">{speciesNameError}</div>}
+        {speciesNameError && (<div className="error-message" style={{color: 'red'}}>{speciesNameError}</div>)}
     </> )
 };
 
