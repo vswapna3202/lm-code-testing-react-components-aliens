@@ -12,6 +12,10 @@ test('renders ReasonForSparing Component', () => {
 
     const reasonForSparingElement = screen.getByLabelText('Reason For Sparing:') as HTMLTextAreaElement;
     expect(reasonForSparingElement.value).toBe('Form filled correctly');
-    fireEvent.change(reasonForSparingElement, { target: { value: 'Form filled incorrectly' } });
-    expect(mockOnChangeReasonForSparing).toHaveBeenCalledWith('Form filled incorrectly');  
+    mockOnChangeReasonForSparing.mockReturnValue([]);
+
+    fireEvent.change(reasonForSparingElement, { target: { value: 'Form filled incorrectly1!' } });
+    expect(mockOnChangeReasonForSparing).toHaveBeenCalledWith('Form filled incorrectly1!');  
+    const errorMessage = 'Reason For Sparing must be between 17 and 153 characters, and contain only letters.';
+    expect(screen.getByText(errorMessage)).toBeInTheDocument();
 })
