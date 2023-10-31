@@ -17,7 +17,7 @@ const SpeciesName : React.FC<SpeciesNameProps> = ({ speciesName, onChangeSpecies
         const newName = event.target.value;
         onChangeSpeciesName(newName);
         if (!validateSpeciesName(newName)) {
-            setSpeciesNameError('Specials Name must be between 3 and 23 characters, and contain only letters.');
+            setSpeciesNameError('Species Name must be between 3 and 23 characters, and contain only letters.');
         }else{
             setSpeciesNameError('');
         }
